@@ -1,54 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>Login - CrediNova</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div style="max-width:400px;margin:auto;padding:20px">
+<h2>Iniciar Sesión</h2>
 
-<h1 style="text-align:center">CrediNova</h1>
-
-<h2>Iniciar sesión</h2>
-
-<input id="loginUser" placeholder="Usuario" style="width:100%;padding:10px;margin-top:10px">
-
-<input id="loginPass" type="password" placeholder="Contraseña" style="width:100%;padding:10px;margin-top:10px">
-
-<button onclick="login()" style="width:100%;margin-top:10px;padding:10px;background:#22c55e;border:none;color:white;border-radius:8px">
-
-Entrar
-
-</button>
-
-
-<h2 style="margin-top:30px">Registro</h2>
-
-<input id="regUser" placeholder="Nuevo usuario" style="width:100%;padding:10px;margin-top:10px">
-
-<input id="regPass" type="password" placeholder="Contraseña" style="width:100%;padding:10px;margin-top:10px">
-
-<input id="refer" placeholder="Código referido (opcional)" style="width:100%;padding:10px;margin-top:10px">
-
-<button onclick="register()" style="width:100%;margin-top:10px;padding:10px;background:#16a34a;border:none;color:white;border-radius:8px">
-
-Crear cuenta
-
-</button>
-
+<div class="box">
+  <input id="logEmail" type="email" placeholder="Correo">
+  <input id="logPass" type="password" placeholder="Contraseña">
+  <button onclick="login()">Entrar</button>
 </div>
 
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 
 </body>
-
 </html>
