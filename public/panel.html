@@ -1,160 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>Panel Admin - CrediNova</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <title>Panel Usuario</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="topbar">
+<h2>Solicitar Préstamo</h2>
 
-<h1>Panel Admin</h1>
-
-</header>
-
-<section style="padding:20px">
-
-<h2>Usuarios registrados</h2>
-
-<button onclick="cargarUsuarios()">Actualizar</button>
-
-<div id="usuarios"></div>
-
-</section>
-
-<script>
-
-const API="/api";
-
-/* CARGAR USUARIOS */
-
-async function cargarUsuarios(){
-
-let res = await fetch(API + "/admin/users");
-
-let users = await res.json();
-
-let html="";
-
-users.forEach(u=>{
-
-html+=`
-
-<div style="background:#1e293b;padding:15px;margin-top:10px;border-radius:10px">
-
-<b>${u.username}</b><br>
-
-Saldo: $${u.saldo}<br>
-
-VIP: ${u.vip}
-
-<br><br>
-
-<input placeholder="nuevo saldo" id="saldo-${u.username}">
-
-<button onclick="editarSaldo('${u.username}')">
-
-Editar saldo
-
-</button>
-
-<br><br>
-
-<select id="vip-${u.username}">
-
-<option value="0">Sin VIP</option>
-<option value="1">VIP 1</option>
-<option value="2">VIP 2</option>
-<option value="3">VIP 3</option>
-
-</select>
-
-<button onclick="activarVIP('${u.username}')">
-
-Activar VIP
-
-</button>
-
+<div class="box">
+  <input id="monto" type="number" placeholder="Monto mínimo 50.000">
+  <button onclick="solicitarPrestamo()">Solicitar</button>
 </div>
 
-`;
+<div id="misPrestamos"></div>
 
-});
-
-document.getElementById("usuarios").innerHTML = html;
-
-}
-
-
-/* EDITAR SALDO */
-
-async function editarSaldo(username){
-
-let saldo = document.getElementById("saldo-"+username).value;
-
-await fetch(API+"/admin/saldo",{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":"application/json"
-
-},
-
-body:JSON.stringify({
-
-username,
-saldo
-
-})
-
-});
-
-alert("Saldo actualizado");
-
-}
-
-
-/* ACTIVAR VIP */
-
-async function activarVIP(username){
-
-let vip = document.getElementById("vip-"+username).value;
-
-await fetch(API+"/admin/activar",{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":"application/json"
-
-},
-
-body:JSON.stringify({
-
-username,
-vip
-
-})
-
-});
-
-alert("VIP activado");
-
-}
-
-</script>
+<script type="module" src="app.js"></script>
 
 </body>
-
 </html>
