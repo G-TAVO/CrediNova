@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Registro</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,10 +13,15 @@
 <h2>Crear Cuenta</h2>
 
 <div class="box">
-  <input id="regEmail" type="email" placeholder="Correo">
-  <input id="regPass" type="password" placeholder="Contraseña">
-  <button onclick="registrar()">Registrarme</button>
+  <input id="regEmail" type="email" placeholder="Correo" required>
+  <input id="regPassword" type="password" placeholder="Contraseña" required>
+
+  <button onclick="registerUser()">Registrarme</button>
 </div>
+
+<p style="text-align:center;">
+  ¿Ya tienes cuenta? <a href="login.html">Iniciar Sesión</a>
+</p>
 
 <script type="module" src="app.js"></script>
 
