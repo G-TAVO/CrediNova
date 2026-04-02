@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Panel Usuario</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Solicitar Préstamo</h2>
+<header>
+  <h2>Panel del Usuario</h2>
+  <button onclick="logoutUser()" class="logout-btn">Cerrar Sesión</button>
+</header>
+
+<h3>Solicitar Préstamo</h3>
 
 <div class="box">
-  <input id="monto" type="number" placeholder="Monto mínimo 50.000">
+  <input id="monto" type="number" placeholder="Monto mínimo 50.000" required>
   <button onclick="solicitarPrestamo()">Solicitar</button>
 </div>
 
-<div id="misPrestamos"></div>
+<h3>Mis Préstamos</h3>
 
+<div id="listaPrestamos"></div>
+
+<!-- Conexión con la lógica -->
 <script type="module" src="app.js"></script>
 
 </body>
