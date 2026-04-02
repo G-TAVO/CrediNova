@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Iniciar Sesión</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,10 +13,15 @@
 <h2>Iniciar Sesión</h2>
 
 <div class="box">
-  <input id="logEmail" type="email" placeholder="Correo">
-  <input id="logPass" type="password" placeholder="Contraseña">
-  <button onclick="login()">Entrar</button>
+  <input id="logEmail" type="email" placeholder="Correo" required>
+  <input id="logPassword" type="password" placeholder="Contraseña" required>
+  
+  <button onclick="loginUser()">Entrar</button>
 </div>
+
+<p style="text-align:center;">
+  ¿No tienes cuenta? <a href="register.html">Registrarme</a>
+</p>
 
 <script type="module" src="app.js"></script>
 
