@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>CrediApp</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Manifest para PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Icono PWA -->
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+
 </head>
 <body>
 
@@ -13,11 +24,16 @@
   <a href="login.html" class="btn">Iniciar Sesión</a>
   <a href="register.html" class="btn">Registrarme</a>
 </div>
+
+<script type="module" src="app.js"></script>
+
 <script>
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/service-worker.js")
-      .then(() => console.log("Service Worker registrado"));
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker registrado"))
+      .catch(err => console.log("Error al registrar SW:", err));
   }
 </script>
+
 </body>
 </html>
