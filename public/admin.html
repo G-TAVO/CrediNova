@@ -1,16 +1,23 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Administrador</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Panel Administrador</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Solicitudes de usuarios</h2>
+<header>
+  <h2>Panel Administrador</h2>
+  <button onclick="logoutUser()" class="logout-btn">Cerrar Sesión</button>
+</header>
 
-<div id="listaPrestamos"></div>
+<h3>Solicitudes de Préstamos</h3>
+
+<div id="adminPrestamos"></div>
 
 <script type="module" src="app.js"></script>
 
